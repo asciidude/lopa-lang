@@ -38,12 +38,11 @@ This will cover how to install lopa-lang onto your machine.
 
 ## 🎈 Usage <a name="usage"></a>
 
-You can use lopa-lang by entering the source directory on your command-line, first running `py -m pip install -r requirements.txt`, then running `py main.py [*INPUT] [*OUTPUT]`.
+Simply create a `main.lopa` file and run the `main.exe` in the same directory as it!
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Python 3.10.1](https://www.python.org/) - Language used
-- [typer](https://pypi.org/project/typer/) - Module used for CLI
 
 ## ✍️ Authors <a name = "authors"></a>
 

@@ -1,3 +1,0 @@
-var age = "17";
-output "Test xddd" + age;
-endproc 0;
