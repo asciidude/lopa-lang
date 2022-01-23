@@ -57,9 +57,9 @@ class Parser:
                 print(f'ERR -> Failed to parse, assignment operator is missing or invalid on the declaration of a variable')
                 quit(-1)
 
-            elif token == 3 and t_type in ['STRING', 'NUMBER', 'IDENTIFIER']:
+            elif token > 2 and t_type in ['STRING', 'NUMBER', 'IDENTIFIER', 'OPERATOR']:
                 value += t_value
-            elif token == 3 and t_type not in ['STRING', 'NUMBER', 'IDENTIFIER']:
+            elif token > 2 and t_type not in ['STRING', 'NUMBER', 'IDENTIFIER', 'OPERATOR']:
                 print(f'ERR -> Failed to parse, invalid assignment value, {t_value}')
                 quit(-1)
 
