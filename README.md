@@ -27,11 +27,9 @@
 
 lopa-lang is a fast and easy-to-use programming language, transpiling to Python
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 🏁 Prerequisites <a name = "prerequisites"></a>
 
-This will cover how to install lopa-lang onto your machine.
-
-### Prerequisites
+This will cover any software you need before installing lopa-lang.
 
 * Python 3.10.x
 
