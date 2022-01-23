@@ -34,7 +34,6 @@ This will cover how to install lopa-lang onto your machine.
 ### Prerequisites
 
 * Python 3.10.x
-* typer (Python module)
 
 ## 🎈 Usage <a name="usage"></a>
 
