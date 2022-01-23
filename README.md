@@ -1,4 +1,4 @@
-<h3 align="center">lopa-lang</h3>
+<h3 align="center">lopa-lang （づ￣3￣）づ╭❤️～</h3>
 
 <div align="center">
 
