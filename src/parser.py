@@ -1,12 +1,11 @@
 from tkinter.tix import INTEGER
-
+import lexer as l
 
 class Parser:
-    def __init__(self, tokens, output):
+    def __init__(self, tokens):
         self.tokens = tokens
         self.index = 0
         self.transpiled = '# Generated with lopa-lang\n# If you want to use lopa-lang, go to https://www.github.com/asciidude/lopa-lang\n\n'
-        self.output = output
 
     def parse(self):
         while self.index < len(self.tokens):
@@ -17,7 +16,7 @@ class Parser:
             t_value = self.tokens[self.index][1]
 
             if t_type == "VARIABLE_DECLARATOR" and t_value == 'var':
-                self.parse_variable_declarator(self.tokens[self.index:len(self.tokens)])
+                self.parse_variable_declaration(self.tokens[self.index:len(self.tokens)])
 
             elif t_type == "IDENTIFIER" and t_value == 'output':
                 self.parse_output_statement(self.tokens[self.index:len(self.tokens)])
@@ -26,12 +25,14 @@ class Parser:
 
             self.index += 1
     
-    def generateFile(self):
-        with open(self.output, 'w') as f:
+    def generateFile(self, output):
+        with open(output, 'w') as f:
             f.write(self.transpiled)
 
     # All the parser functions q(≧▽≦q)
-    def parse_variable_declarator(self, stream):
+
+    # variables 🧠
+    def parse_variable_declaration(self, stream):
         check = 0
 
         name     = ''
@@ -54,7 +55,7 @@ class Parser:
             elif token == 2 and t_type == 'OPERATOR':
                 operator = t_value
             elif token == 2 and t_type != 'OPERATOR':
-                print(f'ERR -> Failed to parse, assignment operator is missing or invalid on the declaration of a variable')
+                print('ERR -> Failed to parse, assignment operator is missing or invalid on the declaration of a variable')
                 quit(-1)
 
             elif token > 2 and t_type in ['STRING', 'NUMBER', 'IDENTIFIER', 'OPERATOR']:
@@ -68,7 +69,7 @@ class Parser:
         self.transpiled += f'{name} {operator} {value}\n'
         self.index += check
 
-    
+    # output statement 📩
     def parse_output_statement(self, stream):
         check = 0
         value = ''
@@ -91,7 +92,7 @@ class Parser:
         self.transpiled += f'print({value})\n'
         self.index += check
 
-    
+    # endproc 👋
     def parse_endproc(self, stream):
         check = 0
         code = 0
@@ -105,7 +106,7 @@ class Parser:
 
             elif token == 1 and t_type == 'NUMBER':
                 if '.' in t_value:
-                    print(f'ERR -> Failed to parse, cannot quit program on a decimal number')
+                    print('ERR -> Failed to parse, cannot quit program on a decimal number')
                     quit(-1)
 
                 code = t_value

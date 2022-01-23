@@ -5,7 +5,7 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/asciidude/lopa-lang.svg)](https://github.com/asciidude/lopa-lang/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/asciidude/lopa-lang.svg)](https://github.com/asciidude/lopa-lang/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE.txt)
 
 </div>
 
@@ -35,7 +35,9 @@ This will cover any software you need before installing lopa-lang.
 
 ## 🎈 Usage <a name="usage"></a>
 
-Simply create a `main.lopa` file and run the `main.exe` in the same directory as it!
+**Ensure to put lopa-lang into your path**
+
+Simply create a `main.lopa` file, then run `lopa-lang`!
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 

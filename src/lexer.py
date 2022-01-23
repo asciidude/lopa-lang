@@ -42,7 +42,7 @@ class Lexer:
                     tokens.append(['NUMBER', word[0:len(word) - 1]])
                 else:
                     tokens.append(['NUMBER', word])
-            elif word in '=/*=-+':
+            elif word in '=/*-+{}()':
                 tokens.append(['OPERATOR', word])
 
             if word[len(word) -1] == ";":
